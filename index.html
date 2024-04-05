@@ -4,12 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AstroHorta - Página Principal</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <script src="js/script.js"></script>
   </head>
   <header>
-    <img src="img/logoAstroHorta.png" width="150px" class="logo" />
+    <a href="index.html">
+      <img src="img/logoAstroHorta.png" width="150px" class="logo" />
+    </a>
     <div class="local">CALENDÁRIO LUNAR</div>
   </header>
-  <body></body>
+  <body>
+    <main>
+      <section class="container-1" id="container">
+        <div class="carousel-container">
+          <div class="carousel-inner">
+            <img class="carousel-img" src="img/luaCheia.png" alt="Lua Cheia" />
+            <img
+              class="carousel-img"
+              src="img/luaMinguante.png"
+              alt="Lua Minguante"
+            />
+            <img class="carousel-img" src="img/luaNova.png" alt="Lua Nova" />
+            <img
+              class="carousel-img"
+              src="img/luaCrescente.png"
+              alt="Lua Crescente"
+            />
+          </div>
+          <button id="prevBtn" onclick="changeSlide(-1)">
+            <img src="img/flechaEsquerda.png" alt="Anterior" width="50px" />
+          </button>
+          <button id="nextBtn" onclick="changeSlide(1)">
+            <img src="img/flechaDireita.png" alt="Próxima" width="50px" />
+          </button>
+        </div>
+        <script src="carousel.js"></script>
+      </section>
+      <section class="container-2" id="container"></section>
+    </main>
+  </body>
 </html>

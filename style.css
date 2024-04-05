@@ -1,0 +1,98 @@
+/* IMPORT */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CABEÇALHO */
+/* CSS CABEÇALHO BÁSICO */
+header {
+  display: flex;
+  position: relative;
+  background-color: #52008c;
+  padding: 20px;
+}
+
+/* CSS LOGO DO CABEÇALHO */
+header .logo {
+  padding: 10px;
+  display: flex-start;
+  position: absolute;
+  bottom: 10px;
+}
+
+header .local {
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 10px;
+  padding-top: 15px;
+  color: #fff;
+  background-color: #429f9c;
+
+  /* TEXTO */
+  text-align: center;
+  font-family: "Baloo Bhaina 2", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+/* FIM DO CABEÇALHO */
+
+body {
+  background-color: #6f02bc;
+}
+/* INÍCIO BODY */
+
+/* SEÇÃO */
+#container {
+  padding: 15px;
+  margin: 75px auto;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+}
+/*  */
+
+/* CARROSSEL */
+.carousel-container {
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+  overflow: hidden; /* Adicionado para esconder qualquer conteúdo adicional que possa vazar */
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-img {
+  margin: 100px;
+  height: 300px;
+}
+
+/* BOTÕES */
+button {
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 40%;
+  padding: 30px;
+  cursor: pointer;
+}
+
+#prevBtn {
+  left: -30px;
+}
+
+#nextBtn {
+  right: -30px;
+}
