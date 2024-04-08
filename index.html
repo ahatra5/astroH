@@ -5,17 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AstroHorta - Página Principal</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" media="screen" href="celular.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <script src="js/script.js"></script>
   </head>
+
+  <!-- cabeçalho -->
+
   <header>
     <a href="index.html">
       <img src="img/logoAstroHorta.png" width="150px" class="logo" />
     </a>
     <div class="local">CALENDÁRIO LUNAR</div>
   </header>
+  <!-- fim do cabeçalho -->
+
+  <!-- parte principal do site -->
   <body>
     <main>
-      <section class="container-1" id="container">
+      <!-- início seção carrossel -->
+
+      <section class="container-1">
         <div class="carousel-container">
           <div class="carousel-inner">
             <img class="carousel-img" src="img/luaCheia.png" alt="Lua Cheia" />
@@ -40,7 +53,80 @@
         </div>
         <script src="carousel.js"></script>
       </section>
-      <section class="container-2" id="container"></section>
+
+      <!-- fim da seção carrossel -->
+
+      <!-- início seção calendário -->
+      <section class="wrapper" class="container-2">
+        <!-- cabeçalho do calendário -->
+        <header>
+          <p class="current-date">
+            2024 <br />
+            FEVEREIRO
+          </p>
+
+          <!-- ícones de setinha -->
+          <div class="icons">
+            <span id="prev" class="material-symbols-rounded">chevron_left</span>
+            <span id="next" class="material-symbols-rounded"
+              >chevron_right</span
+            >
+          </div>
+          <!-- ícones de setinha -->
+        </header>
+        <!-- cabeçalho do calendário -->
+
+        <!-- html do calendário -->
+        <div class="calendar">
+          <ul class="weeks">
+            <li>D</li>
+            <li>S</li>
+            <li>T</li>
+            <li>Q</li>
+            <li>Q</li>
+            <li>S</li>
+            <li>S</li>
+          </ul>
+          <ul class="days">
+            <li>31</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+            <li>31</li>
+          </ul>
+        </div>
+        <!-- fim html calendário -->
+      </section>
+      <script src="calendar.js"></script>
+      <!-- fim da seção calendário -->
     </main>
+    <!-- fim da parte principal do site -->
   </body>
 </html>
