@@ -196,7 +196,7 @@ header .current-date {
   font-family: lemonMilk;
 }
 .calendar ul {
-  padding: 15px;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
