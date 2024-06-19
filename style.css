@@ -28,7 +28,7 @@ header .logo {
   padding: 10px;
   display: flex-start;
   position: absolute;
-  bottom: 10px;
+  bottom: 15px;
 }
 
 header .local {
@@ -46,7 +46,7 @@ header .local {
   /* TEXTO */
   text-align: center;
   font-family: "Baloo Bhaina 2", sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 600;
 }
 /* FIM DO CABEÇALHO */
@@ -150,8 +150,6 @@ button {
 
 .wrapper header {
   cursor: default;
-  border-bottom: solid white 1px;
-  border-top: solid white 1px;
   height: 70px;
   flex-direction: column;
   border-radius: 70px;
@@ -191,6 +189,7 @@ header .icons span:hover {
   transform: scale(120%);
 }
 header .current-date {
+  color: #ffd466;
   font-size: 1.45rem;
   font-weight: 500;
 }
@@ -208,7 +207,7 @@ header .current-date {
   margin-bottom: 20px;
 }
 .calendar li {
-  color: #000000;
+  color: #ffffff;
   width: calc(100% / 7);
   font-size: 1.07rem;
   cursor: default;
@@ -264,34 +263,48 @@ header .current-date {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  background-color: transparent;
+  box-shadow: #000000;
 }
 
 #infoButton {
-  top: 950px;
-  background-color: #fff;
+  top: 850px;
+  color: #fff;
   padding: 10px 20px;
   font-size: 14px;
   cursor: pointer;
   font-family: inter, lemonMilk;
-  z-index: 5;
+  z-index: 2;
 }
 
 .panel {
+  font-family: "Baloo Bhaina 2";
   position: fixed;
-  height: 500px;
+  height: 845px;
   bottom: -100%;
   left: 0;
   right: 0;
   background-color: rgba(113, 48, 173, 0.288);
-  border-top: #f2f2f2 solid 1px;
+  color: #fff;
   padding: 20px;
   box-shadow: 0 -3px 10px rgba(113, 9, 122, 0.26);
-  transition: bottom 0.8s ease-in-out, backdrop-filter 0.8s ease-in-out;
+  transition: bottom 0.5s ease-in-out, backdrop-filter 0.5s ease-in-out;
   z-index: 1;
   backdrop-filter: blur(10px);
 }
 
 .panel.show {
   bottom: 0;
+  padding: 15px;
+}
+
+.info-button-container img {
+  width: 15px;
+  transform: rotate(90deg);
+  margin: 0px 0px 0px 10px;
+  transition: transform 0.3s ease;
+}
+
+.info-button-container img.panel.show {
+  transform: rotate(180deg);
 }
