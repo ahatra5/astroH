@@ -298,20 +298,18 @@ header .current-date {
   padding: 15px;
 }
 
-.info-button-container img {
-  width: 15px;
-  transform: rotate(90deg);
-  margin: 0px 0px 0px 10px;
-  transition: transform 0.3s ease;
-}
-
-.info-button-container img.panel.show {
-  transform: rotate(180deg);
-}
-
 /* info calendário */
 .purple {
   background-color: rgb(53, 0, 53);
   color: white;
   border-radius: 15px;
+}
+/* info calendário */
+
+#panelAlimento {
+  border: solid 1px rgb(255, 255, 255);
+  border-radius: 15px;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
 }
