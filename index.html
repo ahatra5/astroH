@@ -123,6 +123,145 @@
           </ul>
         </div>
         <!-- fim html calendário -->
+        <script>
+          const daysTag = document.querySelector(".days"),
+            currentDate = document.querySelector(".current-date"),
+            prevNextIcon = document.querySelectorAll(".icons span");
+
+          let date = new Date(),
+            currYear = date.getFullYear(),
+            currMonth = date.getMonth();
+
+          const months = [
+            "JANEIRO",
+            "FEVEREIRO",
+            "MARÇO",
+            "ABRIL",
+            "MAIO",
+            "JUNHO",
+            "JULHO",
+            "AGOSTO",
+            "SETEMBRO",
+            "OUTUBRO",
+            "NOVEMBRO",
+            "DEZEMBRO",
+          ];
+
+          let slideAtual = 0;
+          const totalSlides = 4;
+          const carousel = document.querySelector(".carousel-inner");
+          const images = document.querySelectorAll(".carousel-img");
+
+          const purpleDays = {
+            0: {
+              // Dias roxos para o slide 1 - LUA CHEIA
+              2024: {
+                6: [21, 22, 23, 24, 25, 26],
+                7: [19, 20, 21, 22, 23, 24, 25],
+              },
+            },
+
+            1: {
+              // Dias roxos para o slide 2 - LUA MINGUANTE
+              2024: {
+                6: [1, 2, 3, 4, 27, 28, 29, 30, 31],
+                7: [1, 2, 3, 26, 27, 28, 29, 30, 31],
+              },
+            },
+
+            2: {
+              // Dias roxos para o slide 3 - LUA NOVA
+              2024: {
+                6: [5, 6, 7, 8, 9, 10, 11, 12],
+                7: [4, 5, 6, 7, 8, 9, 10, 11],
+              },
+            },
+
+            3: {
+              // Dias roxos para o slide 4 - LUA CRESCENTE
+              2024: {
+                6: [13, 14, 15, 16, 17, 18, 19, 20],
+                7: [12, 13, 14, 15, 16, 17, 18],
+              },
+            },
+          };
+
+          const renderCalendar = () => {
+            let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(),
+              lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),
+              lastDayofMonth = new Date(
+                currYear,
+                currMonth,
+                lastDateofMonth
+              ).getDay(),
+              lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
+            let liTag = "";
+
+            for (let i = firstDayofMonth; i > 0; i--) {
+              liTag += `<li class="inactive">${
+                lastDateofLastMonth - i + 1
+              }</li>`;
+            }
+
+            for (let i = 1; i <= lastDateofMonth; i++) {
+              let isToday =
+                i === date.getDate() &&
+                currMonth === new Date().getMonth() &&
+                currYear === new Date().getFullYear()
+                  ? "active"
+                  : "";
+
+              let isPurple =
+                purpleDays[slideAtual][currYear] &&
+                purpleDays[slideAtual][currYear][currMonth] &&
+                purpleDays[slideAtual][currYear][currMonth].includes(i)
+                  ? "purple"
+                  : "";
+
+              liTag += `<li class="${isToday} ${isPurple}">${i}</li>`;
+            }
+
+            for (let i = lastDayofMonth; i < 6; i++) {
+              liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
+            }
+            currentDate.innerText = `${months[currMonth]} ${currYear}`;
+            daysTag.innerHTML = liTag;
+          };
+          renderCalendar();
+
+          prevNextIcon.forEach((icon) => {
+            icon.addEventListener("click", () => {
+              currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
+
+              if (currMonth < 0 || currMonth > 11) {
+                date = new Date(currYear, currMonth, new Date().getDate());
+                currYear = date.getFullYear();
+                currMonth = date.getMonth();
+              } else {
+                date = new Date();
+              }
+              renderCalendar();
+            });
+          });
+
+          function reiniciar() {
+            const translateValue = -slideAtual * 100 + "%";
+            carousel.style.transform = "translateX(" + translateValue + ")";
+          }
+
+          function changeSlide(direction) {
+            slideAtual += direction;
+
+            if (slideAtual < 0) {
+              slideAtual = totalSlides - 1;
+            } else if (slideAtual >= totalSlides) {
+              slideAtual = 0;
+            }
+
+            reiniciar();
+            renderCalendar(); // Re-render the calendar after changing the slide
+          }
+        </script>
       </section>
       <script src="calendar.js"></script>
       <!-- fim da seção calendário -->

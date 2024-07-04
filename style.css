@@ -230,18 +230,18 @@ header .current-date {
   visibility: hidden;
 }
 .days li.active {
-  color: #fff;
-  transform: scale(120%);
+  color: #dbdf05;
+  transform: scale(100%);
 }
 .days li::before {
   position: absolute;
   content: "";
   left: 50%;
   top: 50%;
-  height: 40px;
-  width: 40px;
+  height: 25px;
+  width: 60px;
   z-index: -1;
-  border-radius: 50%;
+  border-radius: 80px;
   transform: translate(-50%, -50%);
 }
 .days li.active::before {
@@ -252,7 +252,7 @@ header .current-date {
 }
 .days li:hover {
   transition: 0.4s;
-  transform: scale(115%);
+  transform: scale(105%);
   transform: perspective(130%);
 }
 
@@ -307,4 +307,11 @@ header .current-date {
 
 .info-button-container img.panel.show {
   transform: rotate(180deg);
+}
+
+/* info calendário */
+.purple {
+  background-color: rgb(53, 0, 53);
+  color: white;
+  border-radius: 15px;
 }
