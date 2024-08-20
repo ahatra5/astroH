@@ -307,9 +307,35 @@ header .current-date {
 /* info calendário */
 
 #panelAlimento {
+  display: inline-block;
   border: solid 1px rgb(255, 255, 255);
   border-radius: 15px;
   width: 300px;
+  overflow: hidden;
+  height: 365px;
   margin: 10px;
   padding: 10px;
+}
+
+#infoPanel {
+  flex-direction: column;
+}
+
+#panelAlimento.active {
+  height: auto;
+}
+
+#panelAlimento.active #read_button {
+  top: 625px;
+}
+#panelAlimento.inactive #read_button {
+  bottom: 425px;
+}
+
+#read_button {
+  font-family: lemonMilk;
+  font-size: 10px;
+  bottom: 5px;
+  color: rgb(173, 173, 73);
+  text-decoration: underline;
 }

@@ -285,10 +285,46 @@
 
     <div id="infoPanel" class="panel">
       <div id="panelAlimento">
-        <img src="img/" alt="" width="100px" />
-        <p>A alface pode ser consumida tatatatata</p>
+        <img src="img/imagem alface.png" width="60px" />
+        <h2>Alface</h1> 
+        <p style="text-align: justify">
+          &nbsp; &nbsp; Plantar alface durante a fase crescente da lua pode ser
+          benéfico, de acordo com a jardinagem biodinâmica. Nesta fase, a lua
+          está aumentando sua luminosidade, o que é considerado ideal para
+          promover o crescimento das partes aéreas das plantas, como as folhas.
+          Para um cultivo bem-sucedido, prepare o solo de forma adequada,
+          garantindo que seja rico em nutrientes e bem drenado. A alface prefere
+          temperaturas amenas e solo constantemente úmido, então ajuste a rega
+          conforme necessário. Monitorar as plantas ao longo do crescimento e
+          ajustar os cuidados de acordo com as necessidades específicas da
+          alface pode contribuir para uma colheita mais produtiva.
+        </p>
+        <button id="read_button">Ler Mais</button>
+        
       </div>
+      
     </div>
+
+
+    
+    <script>
+      var button = document.getElementById('read_button');
+      
+      button.addEventListener('click', function() {
+          var card = document.querySelector('#panelAlimento');
+      
+          card.classList.toggle('active');
+      
+          if (card.classList.contains('active')) {
+              button.textContent = 'Ler Menos';
+              card.classList.remove('inactive'); // Remove a classe inativa
+          } else {
+              button.textContent = 'Ler Mais';
+              card.classList.add('inactive'); // Adiciona a classe inativa
+          }
+      });
+      
+    </script>
 
     <script src="maisinfo.js"></script>
     <!-- sidebar testeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
